@@ -1,0 +1,12 @@
+<country-search
+  placeHolder="Search by country"
+  (searched)="query.set($event)"
+></country-search>
+
+<country-list 
+[countries]="countryResource.value()!"
+[errorMessage]="countryResource.error()"
+[isEmpty]="countryResource.value()?.length === 0"
+[isLoading]="countryResource.isLoading()"
+></country-list>
+
